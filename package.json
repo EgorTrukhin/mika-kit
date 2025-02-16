@@ -1,6 +1,6 @@
 {
   "name": "mika-kit",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -41,19 +41,19 @@
     "build-storybook": "storybook build"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^3.2.4",
+    "@chromatic-com/storybook": "3.2.4",
     "@stencil/core": "4.26.0",
-    "@storybook/addon-essentials": "^8.5.6",
-    "@storybook/blocks": "^8.5.6",
-    "@storybook/test": "^8.5.6",
-    "@storybook/web-components": "^8.5.6",
-    "@storybook/web-components-vite": "^8.5.6",
+    "@storybook/addon-essentials": "8.5.6",
+    "@storybook/blocks": "8.5.6",
+    "@storybook/test": "8.5.6",
+    "@storybook/web-components": "8.5.6",
+    "@storybook/web-components-vite": "8.5.6",
     "@types/jest": "^29.5.6",
     "@types/node": "^16.18.11",
-    "jest": "^29.7.0",
-    "jest-cli": "^29.7.0",
-    "lit": "^3.2.1",
-    "storybook": "^8.5.6"
+    "jest": "29.7.0",
+    "jest-cli": "29.7.0",
+    "lit": "3.2.1",
+    "storybook": "8.5.6"
   },
   "license": "MIT"
 }

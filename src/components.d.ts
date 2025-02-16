@@ -6,6 +6,23 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface MikaButton {
+        /**
+          * if `true`, the button is disabled
+          * @default false
+         */
+        "isDisabled"?: boolean;
+        /**
+          * button size
+          * @default m
+         */
+        "size"?: "xs" | "s" | "m" | "l";
+        /**
+          * button variant
+          * @default primary
+         */
+        "variant"?: "primary" | "secondary";
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +39,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLMikaButtonElement extends Components.MikaButton, HTMLStencilElement {
+    }
+    var HTMLMikaButtonElement: {
+        prototype: HTMLMikaButtonElement;
+        new (): HTMLMikaButtonElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +52,28 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "mika-button": HTMLMikaButtonElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface MikaButton {
+        /**
+          * if `true`, the button is disabled
+          * @default false
+         */
+        "isDisabled"?: boolean;
+        /**
+          * button size
+          * @default m
+         */
+        "size"?: "xs" | "s" | "m" | "l";
+        /**
+          * button variant
+          * @default primary
+         */
+        "variant"?: "primary" | "secondary";
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +89,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "mika-button": MikaButton;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +97,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "mika-button": LocalJSX.MikaButton & JSXBase.HTMLAttributes<HTMLMikaButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
